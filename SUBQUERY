@@ -7,3 +7,8 @@ where salary > (select salary from employee where employee_id = '163');
 
 select first_name,last_name,department_id,job_id from employee
 where job_id = (select job_id from employee where employee_id = '169');
+
+-- 3. From the following table, write a SQL query to find those employees whose salary matches the lowest salary of any of the departments. Return first name, last name and department ID.
+
+select first_name,last_name,department_id from employee 
+where salary in (select min(salary) from employee group by department_id);
