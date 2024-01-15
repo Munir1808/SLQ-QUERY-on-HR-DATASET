@@ -1,0 +1,9 @@
+-- 1. From the following table, write a SQL query to find those employees who receive a higher salary than the employee with ID 163. Return first name, last name.
+
+select first_name,last_name from employee
+where salary > (select salary from employee where employee_id = '163');
+
+-- 2. From the following table, write a SQL query to find out which employees have the same designation as the employee whose ID is 169. Return first name, last name, department ID and job ID.
+
+select first_name,last_name,department_id,job_id from employee
+where job_id = (select job_id from employee where employee_id = '169');
