@@ -54,3 +54,9 @@ where (manager_id,salary)
 
 select * from employee
 where employee_id in (134,159,183);
+
+-- 9. From the following table, write a SQL query to find those employees whose salary is in the range of 1000, and 3000 (Begin and end values have included.). Return all the fields.
+
+select * from employee
+where salary in 
+(select salary from employee where salary between '1000' and '3000');
