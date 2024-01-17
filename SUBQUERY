@@ -37,3 +37,15 @@ select d.department_ID,e.first_name,e.job_ID,d.department_name from
 employee e, departments d
 where e.department_ID = d.department_ID
 and d.department_name = 'Finance';
+
+-- 7. From the following table, write a SQL query to find the employee whose salary is 3000 and reporting person’s ID is 121. Return all fields.
+
+-- 1st Method 
+select * from employee 
+where employee_id in 
+(select employee_id from employee where manager_id = '121' and salary = '3000');
+
+-- 2nd Method 
+select * from employee 
+where (manager_id,salary) 
+= (select 121,3000); 
