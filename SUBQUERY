@@ -60,3 +60,8 @@ where employee_id in (134,159,183);
 select * from employee
 where salary in 
 (select salary from employee where salary between '1000' and '3000');
+
+-- 10. From the following table and write a SQL query to find those employees whose salary falls within the range of the smallest salary and 2500. Return all the fields.
+
+select * from employee
+where salary between (select min(salary) from employee) and  2500;
