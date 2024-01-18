@@ -64,7 +64,8 @@ where salary in
 -- 10. From the following table and write a SQL query to find those employees whose salary falls within the range of the smallest salary and 2500. Return all the fields.
 
 select * from employee
-where salary between (select min(salary) from employee) and  2500;
+where salary between 
+(select min(salary) from employee) and  2500;
 
 -- 11. From the following tables, write a SQL query to find those employees who do not work in the departments where managers’ IDs are between 100 and 200 (Begin and end values are included.). Return all the fields of the employeess.
 
